@@ -3,22 +3,24 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TestDriver {
+    static List<String> initialMessages = Arrays.asList(
+                                "Hello. How are you feeling today?", 
+                                "Hi there, welcome to my office. I'm here to chat about anything. What's on your mind?", 
+                                "How do you do. Please tell me your problem.",
+                                "Please tell me what's been bothering you.", 
+                                "Is something troubling you?", 
+                                "Hello. How are you doing today?");
+    static List<String> endChatTerms = Arrays.asList(
+                                "goodbye",
+                                "I have to leave",
+                                "quit",
+                                "bye", 
+                                "exit");
 
+    static Scanner scanner = new Scanner(System.in);               
+    
+    
     public static void main(String[] args) throws Exception {
-        List<String> initialMessages = Arrays.asList(
-                                    "Hello. How are you feeling today?", 
-                                    "Hi there, welcome to my office. I'm here to chat about anything. What's on your mind?", 
-                                    "How do you do. Please tell me your problem.",
-                                    "Please tell me what's been bothering you.", 
-                                    "Is something troubling you?", 
-                                    "Hello. How are you doing today?");
-        List<String> endChatTerms = Arrays.asList(
-                                    "goodbye",
-                                    "I have to leave",
-                                    "quit",
-                                    "bye", 
-                                    "exit");
-
         System.out.println(initialMessages.get((int) (Math.random() * initialMessages.size())));
 
         while (true) {
@@ -32,12 +34,9 @@ public class TestDriver {
         }
     }
 
-    static String inputText() {
-        Scanner scanner = new Scanner(System.in);
+    static private String inputText() {
         System.out.print("=> ");
         String inputText = scanner.nextLine();
-        scanner.close();
         return inputText;
     }
-
 }
